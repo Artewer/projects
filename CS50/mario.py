@@ -1,15 +1,18 @@
-i = 0
+
 def get_int():
-    global i
-    while i < 1 or i > 8:
+    i = 0
+    while True:
         try:
             i = int(input("Height:"))
+            if i < 1 or i > 8:
+                continue
+            return i
         except ValueError:
             print("This is not a valid number")
 
-get_int()
+i = get_int ()
 blocks = '#'
-spaces= i
+spaces = i
 for x in range(i):
     print(spaces*' ', blocks, ' ', blocks)
     blocks = blocks + '#'
